@@ -25,30 +25,36 @@ function ResultsPage({ results }) {
         padding: "0 20px"
       }}>
         <Container fluid>
-          <Row>
-            {results.map((result, index) => (
-              <Col key={index} xs={12} className="mb-3">
-                <Card>
-                  <Card.Body>
-                    <Card.Title style={{ 
-                      textAlign: "center", 
-                      fontWeight: "bold",
-                      wordBreak: "break-word"
-                    }}>
-                      {result["store name"]}
-                    </Card.Title>
-                    <Card.Text style={{ wordBreak: "break-word" }}>
-                      <strong>עיר:</strong> {result.city}
-                      <br />
-                      <strong>כתובת:</strong> {result.address}
-                      <br />
-                      <strong>קטגוריות:</strong> {result.category.join(", ")}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          {results.length === 0 ? (
+            <div style={{ textAlign: "center", fontSize: "1.2rem", marginTop: "20px" }}>
+              אין חנויות המתאימות לחיפוש
+            </div>
+          ) : (
+            <Row>
+              {results.map((result, index) => (
+                <Col key={index} xs={12} className="mb-3">
+                  <Card>
+                    <Card.Body>
+                      <Card.Title style={{ 
+                        textAlign: "center", 
+                        fontWeight: "bold",
+                        wordBreak: "break-word"
+                      }}>
+                        {result["store name"]}
+                      </Card.Title>
+                      <Card.Text style={{ wordBreak: "break-word" }}>
+                        <strong>עיר:</strong> {result.city}
+                        <br />
+                        <strong>כתובת:</strong> {result.address}
+                        <br />
+                        <strong>קטגוריות:</strong> {result.category.join(", ")}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          )}
         </Container>
       </div>
       <div style={{
