@@ -18,8 +18,21 @@ function App() {
         direction: "rtl",
       }}
     >
-      <Example />
-
+      <div style={{ display: "flex", flexDirection: "row", justifyContent: 'center' }}>
+        <Example />
+        <h3
+          style={{
+            textAlign: "right",
+            direction: "rtl",
+            fontSize: "1rem",
+            
+            marginTop: '10px'
+  
+          }}
+        >
+          חנויות המכבדות את כרטיס "חסדי יום טוב "
+        </h3>{" "}
+      </div>
       <Router>
         <div>
           <Routes>
