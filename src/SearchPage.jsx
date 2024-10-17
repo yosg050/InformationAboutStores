@@ -12,7 +12,6 @@ const SearchPage = ({ setSearchResults }) => {
   const [selectedCities, setSelectedCities] = useState([]);
   const navigate = useNavigate();
 
-
   const handleCategoryChange = (category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
@@ -68,6 +67,8 @@ const SearchPage = ({ setSearchResults }) => {
           overflowY: "auto",
           gap: "10px",
           marginBottom: "10px",
+          marginLeft: "5%",
+          marginRight: "5%",
         }}
       >
         <div>
