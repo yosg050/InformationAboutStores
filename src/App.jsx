@@ -5,6 +5,7 @@ import ResultsPage from "./ResultsPage";
 import Example from "./Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 function App() {
   const [searchResults, setSearchResults] = useState([]);
 
