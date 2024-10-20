@@ -75,7 +75,8 @@ function Example() {
             לצורך חיפוש חנויות יש צורך לסמן עיר או מספר ערים מבוקשות וקטגוריות
             שמעניינות אתכם
           </li>
-          <li>ניתן ליצור קשר במייל hyyg171@gmail.com</li>
+          <br />
+          <p style={{ textAlign: "center" }}>ניתן ליצור קשר במייל hyyg171@gmail.com</p>
         </Modal.Body>
         {/* <Modal.Footer></Modal.Footer> */}
       </Modal>

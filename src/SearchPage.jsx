@@ -86,13 +86,24 @@ const SearchPage = ({ setSearchResults }) => {
             }}
           >
             {categories.map((category) => (
-              <div key={`category-${category}`} className="mb-1">
+              <div
+                key={`category-${category}`}
+                className="mb-1"
+                style={{
+                  backgroundColor: "lightgray",
+                  margin: "5px",
+                  paddingRight: "5%",
+                  paddingLeft: "5%",
+                  borderRadius: "10%",
+                }}
+              >
                 <Form.Check
                   type="checkbox"
                   id={`category-${category}`}
                   label={category}
                   onChange={() => handleCategoryChange(category)}
                   checked={selectedCategories.includes(category)}
+                  
                 />
               </div>
             ))}
@@ -112,7 +123,13 @@ const SearchPage = ({ setSearchResults }) => {
             }}
           >
             {cities.map((city) => (
-              <div key={`city-${city}`} className="mb-1">
+              <div key={`city-${city}`} className="mb-1"  style={{
+                backgroundColor: "lightgray",
+                margin: "5px",
+                paddingRight: "5%",
+                paddingLeft: "5%",
+                borderRadius: "10%",
+              }}>
                 <Form.Check
                   type="checkbox"
                   id={`city-${city}`}
