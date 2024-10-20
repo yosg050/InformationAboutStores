@@ -90,7 +90,7 @@ const SearchPage = ({ setSearchResults }) => {
                 key={`category-${category}`}
                 className="mb-1"
                 style={{
-                  backgroundColor: "lightgray",
+                  backgroundColor:"#f0f0f0",
                   margin: "5px",
                   paddingRight: "5%",
                   paddingLeft: "5%",
@@ -124,12 +124,12 @@ const SearchPage = ({ setSearchResults }) => {
           >
             {cities.map((city) => (
               <div key={`city-${city}`} className="mb-1"  style={{
-                backgroundColor: "lightgray",
-                margin: "5px",
-                paddingRight: "5%",
-                paddingLeft: "5%",
-                borderRadius: "10%",
-              }}>
+                  backgroundColor: "#f0f0f0"  ,
+                  margin: "5px",
+                  paddingRight: "5%",
+                  paddingLeft: "5%",
+                  borderRadius: "10%",
+                }}>
                 <Form.Check
                   type="checkbox"
                   id={`city-${city}`}
