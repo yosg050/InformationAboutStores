@@ -5,7 +5,6 @@ import ResultsPage from "./ResultsPage";
 import Example from "./Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 function App() {
   const [searchResults, setSearchResults] = useState([]);
 
@@ -18,22 +17,26 @@ function App() {
         width: "100vw",
         direction: "rtl",
         overflow: "hidden",
-        
-
       }}
     >
-        
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: 'center', backgroundColor: "#CDDEED"}}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          backgroundColor: "#CDDEED",
+        }}
+      >
         <Example />
         <h3
           style={{
             direction: "rtl",
-            fontSize: "3vw",
-            marginTop: '14px'
-  
+            fontSize: "1rem",
+            marginTop: "14px",
+            textAlign:'center'
           }}
         >
-       חנויות המכבדות את כרטיס חסדי יום טוב/חסדי יעקב
+          חנויות המכבדות את כרטיס חסדי יום טוב/חסדי יעקב
         </h3>{" "}
       </div>
       <Router>

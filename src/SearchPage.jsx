@@ -50,7 +50,7 @@ const SearchPage = ({ setSearchResults }) => {
       <div>
         <h2
           style={{
-             padding: "20px 0",
+            paddingTop: "20px",
             fontSize: "1.5rem",
             textAlign: "center",
           }}
