@@ -23,12 +23,17 @@ function ResultsPage({ results }) {
           maxWidth: "700px",
         }}
       >
-        <h2 style={{ textAlign: "center", padding: "20px 0" , fontSize: "1.5rem"}}>תוצאות חיפוש</h2>
+        <h2
+          style={{ textAlign: "center", padding: "20px 0", fontSize: "1.5rem" }}
+        >
+          תוצאות חיפוש
+        </h2>
         <div
           style={{
             flex: 1,
             overflowY: "auto",
             padding: "0 20px",
+            maxHeight: "80vh",
           }}
         >
           <Container fluid>
@@ -83,10 +88,12 @@ function ResultsPage({ results }) {
             onClick={returnSearch}
             variant="secondary"
             style={{
-              display: "block",
-              width: "100%",
-              maxWidth: "300px",
-              margin: "0 auto",
+              position: "fixed",
+              bottom: "20px",
+              width: "60%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 1000,
             }}
           >
             חזור לחיפוש

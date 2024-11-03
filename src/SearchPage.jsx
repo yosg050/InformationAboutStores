@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import data from "./categories.json";
 import listOfStores from "./listOfStores.json";
@@ -10,6 +10,8 @@ const cities = data.city;
 const SearchPage = ({ setSearchResults }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedCities, setSelectedCities] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const handleCategoryChange = (category) => {
@@ -26,13 +28,30 @@ const SearchPage = ({ setSearchResults }) => {
     );
   };
 
+  useEffect(() => {
+    if (showPopup) {
+      const timer = setTimeout(() => {
+        setShowPopup(false);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [showPopup]);
+
   const handleSearch = () => {
+    if (selectedCities.length === 0 || selectedCategories.length === 0) {
+      setSearchResults([]);
+      setShowPopup(true);
+      return;
+    }
+
     const results = listOfStores.filter(
       (item) =>
         (selectedCities.length === 0 || selectedCities.includes(item.city)) &&
         (selectedCategories.length === 0 ||
           selectedCategories.some((cat) => item.category.includes(cat)))
     );
+    console.log(results);
+
     setSearchResults(results);
     navigate("/results");
   };
@@ -44,9 +63,25 @@ const SearchPage = ({ setSearchResults }) => {
         flexDirection: "column",
         boxSizing: "border-box",
         overflow: "hidden",
-        alignItems: 'center'
+        alignItems: "center",
       }}
     >
+      {showPopup && (
+        <Alert
+          variant="danger"
+          style={{
+            position: "fixed",
+            top: "20px",
+            zIndex: 1000,
+            width: "80%",
+            maxWidth: "400px",
+            textAlign: "center",
+            fontWeight: "bold",
+          }}
+        >
+          <p style={{ margin: 0 }}>לא נבחרו אפשרויות</p>
+        </Alert>
+      )}
       <div>
         <h2
           style={{
@@ -67,15 +102,12 @@ const SearchPage = ({ setSearchResults }) => {
           flex: 1,
           overflowY: "auto",
           gap: "10px",
-          width: '90%',
-          maxWidth: '700px',
-          
+          width: "90%",
+          maxWidth: "700px",
         }}
       >
         <div>
-          <div style={{ fontWeight: "bold", marginBottom: "5px" }}>
-            קטגוריה
-          </div>
+          <div style={{ fontWeight: "bold", marginBottom: "5px" }}>קטגוריה</div>
           <Form
             style={{
               maxHeight: "30vh",
@@ -89,9 +121,8 @@ const SearchPage = ({ setSearchResults }) => {
             {categories.map((category) => (
               <div
                 key={`category-${category}`}
-                className="mb-1"
                 style={{
-                  backgroundColor:"#f0f0f0",
+                  backgroundColor: "#f0f0f0",
                   margin: "5px",
                   paddingRight: "5%",
                   paddingLeft: "5%",
@@ -104,7 +135,6 @@ const SearchPage = ({ setSearchResults }) => {
                   label={category}
                   onChange={() => handleCategoryChange(category)}
                   checked={selectedCategories.includes(category)}
-                  
                 />
               </div>
             ))}
@@ -124,13 +154,16 @@ const SearchPage = ({ setSearchResults }) => {
             }}
           >
             {cities.map((city) => (
-              <div key={`city-${city}`} className="mb-1"  style={{
-                  backgroundColor: "#f0f0f0"  ,
+              <div
+                key={`city-${city}`}
+                style={{
+                  backgroundColor: "#f0f0f0",
                   margin: "5px",
                   paddingRight: "5%",
                   paddingLeft: "5%",
                   borderRadius: "10%",
-                }}>
+                }}
+              >
                 <Form.Check
                   type="checkbox"
                   id={`city-${city}`}
@@ -148,7 +181,7 @@ const SearchPage = ({ setSearchResults }) => {
           style={{
             position: "fixed",
             bottom: "20px",
-            width: "80%",
+            width: "60%",
             left: "50%",
             transform: "translateX(-50%)",
             zIndex: 1000,
