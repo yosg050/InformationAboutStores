@@ -13,8 +13,8 @@ function Example() {
       <Button variant="Link" onClick={handleShow}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="14"
+          height="14"
           fill="currentColor"
           className="bi bi-info-circle"
           viewBox="0 0 16 16"
@@ -58,7 +58,7 @@ function Example() {
         >
           {" "}
           <p style={{ textAlign: "center" }}>
-            מידע על חנויות המכבדות את הכרטיס "חסדי יום טוב"
+          שירות לחיפוש החנויות המכבדות את כרטיסים של חסדי יום טוב וחסדי יעקב 
           </p>
           <li>האתר הוקם לטובת הציבור ואין לאתר שום קשר לעמותה</li>
           <li>
@@ -69,7 +69,7 @@ function Example() {
           </li>
           <li>
             בשימושך באתר, אתה מאשר שקראת והבנת את תנאי השימוש, ושאין לאתר כל
-            אחריות משפטית בנוגע למידע המוצג
+            אחריות בנוגע למידע המוצג
           </li>
           <li>
             לצורך חיפוש חנויות יש צורך לסמן עיר או מספר ערים מבוקשות וקטגוריות

@@ -10,11 +10,17 @@ function ResultsPage({ results }) {
   };
 
   return (
+    <div style={{  display: "flex", 
+      flexDirection: "column", 
+      alignItems: 'center',}}>
+
     <div style={{ 
       display: "flex", 
       flexDirection: "column", 
       height: "90vh",
-      overflow: "hidden"
+      overflow: "hidden",
+      width: '90%',
+      maxWidth: '700px',
     }}>
       <h2 style={{ textAlign: "center", padding: "20px 0" }}>
         תוצאות חיפוש
@@ -70,11 +76,12 @@ function ResultsPage({ results }) {
             maxWidth: "300px",
             margin: "0 auto"
           }}
-        >
+          >
           חזור לחיפוש
         </Button>
       </div>
     </div>
+          </div>
   );
 }
 

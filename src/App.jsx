@@ -17,21 +17,23 @@ function App() {
         height: "100vh",
         width: "100vw",
         direction: "rtl",
+        overflow: "hidden",
+        
+
       }}
     >
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: 'center' }}>
+        
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: 'center', backgroundColor: "#CDDEED"}}>
         <Example />
         <h3
           style={{
-            textAlign: "right",
             direction: "rtl",
-            fontSize: "1rem",
-            
-            marginTop: '10px'
+            fontSize: "3vw",
+            marginTop: '14px'
   
           }}
         >
-          חנויות המכבדות את כרטיס "חסדי יום טוב "
+       חנויות המכבדות את כרטיס חסדי יום טוב/חסדי יעקב
         </h3>{" "}
       </div>
       <Router>

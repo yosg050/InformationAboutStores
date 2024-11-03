@@ -44,12 +44,13 @@ const SearchPage = ({ setSearchResults }) => {
         flexDirection: "column",
         boxSizing: "border-box",
         overflow: "hidden",
+        alignItems: 'center'
       }}
     >
       <div>
         <h2
           style={{
-            marginBottom: "10px",
+             padding: "20px 0",
             fontSize: "1.5rem",
             textAlign: "center",
           }}
@@ -66,14 +67,14 @@ const SearchPage = ({ setSearchResults }) => {
           flex: 1,
           overflowY: "auto",
           gap: "10px",
-          marginBottom: "10px",
-          marginLeft: "5%",
-          marginRight: "5%",
+          width: '90%',
+          maxWidth: '700px',
+          
         }}
       >
         <div>
           <div style={{ fontWeight: "bold", marginBottom: "5px" }}>
-            קטגוריות
+            קטגוריה
           </div>
           <Form
             style={{
